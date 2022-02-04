@@ -1,4 +1,11 @@
-<p [innerHtml]="showContent[0]"></p>
-<p [innerHtml]="showContent[1]"></p>
-<p [innerHtml]="showContent[2]"></p>
-
+<header class="title"> {{game ? game.title : '' }}</header>
+<div class ="description"> {{ game ? game.description : ''}}</div>
+<div class = "creator"> {{ game ? game.creator : ''}} </div>
+<div class="content-card-img">
+    <a (click)="log()" clickable>
+    <img *ngIf="game?.imgURL" src="{{ game?.imgURL }}">
+</a></div>
+<div *ngIf = "game ? game.type : null" class="type"> {{ game ? game.type : ''}}</div>
+<ul class = "tags">
+     <li *ngFor=" let game of game?.tags">{{game}}</li>
+</ul>
