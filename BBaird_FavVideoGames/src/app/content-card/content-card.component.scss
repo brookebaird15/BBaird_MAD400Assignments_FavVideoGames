@@ -1,0 +1,12 @@
+:host{
+    display: block;
+    border: 1px solid black;
+}
+
+img {
+    width: 200px;
+}
+
+:host.is-first{
+    border: 2px solid red;
+}
