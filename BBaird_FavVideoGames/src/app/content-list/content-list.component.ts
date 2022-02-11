@@ -54,7 +54,21 @@ export class ContentListComponent implements OnInit {
       imgURL: 'https://cdn.cloudflare.steamstatic.com/steam/apps/8930/header.jpg?t=1579731804',
       type: 'Turn-Based Strategy',
       tags: ["Strategy", "Turn-Based"]
-    }
+    },
+    {id: 6,
+      title: 'Slime Rancher',
+      description: 'You wrangle slimes and going adventuring',
+      creator: 'Monomi Park',
+      imgURL: 'https://image.api.playstation.com/vulcan/img/cfn/11307NUlRPcxCgzizu6gpFZiR_WIqYHV9W0G8obBn0J1qCXY-SjbkzKihVNA3WzUQHbD08zWVaN-a7U5--t57lc-gckkQ0f-.png',
+      type: 'Adventure',
+      tags: ["First-Person", "Adventure"]
+    },
+    {id: 7,
+      title: 'VA-11-Hall-A: A Cyberpunk Bartender Action',
+      description: 'An indie visual novel where you are a bartender',
+      creator: 'Sukeban Games',
+      imgURL: 'https://cdn.akamai.steamstatic.com/steam/apps/447530/capsule_616x353.jpg?t=1568782899',
+      tags: ["Visual Novel", "Cyberpunk"]}
     ]
   constructor() { }
 
