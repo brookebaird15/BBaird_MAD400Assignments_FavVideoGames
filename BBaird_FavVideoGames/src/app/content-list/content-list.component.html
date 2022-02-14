@@ -1,1 +1,30 @@
-<app-content-card *ngFor="let game of gamesList; index as i; first as isFirst" [game]="game" [class.is-first]="isFirst"></app-content-card>
+<div class = "searchBar">
+    <input [(ngModel)]="searchGame">
+    <button (click)="searchForTitle()">Search</button>
+</div>
+<div class = "isFound" *ngIf="isFound">Found the game</div>
+<div class = "isNotFound" *ngIf="!isFound && buttonClick">Title doesn't exist</div>
+
+<app-content-card class = "default" *ngFor="let game of (gamesList | defaultType); index as i; first as isFirst"
+ [game]="game" [class.is-first]="isFirst"
+ [ngClass] = "game.title.toLowerCase() === selectedSearchGame.toLowerCase() ? 'selectedGame' : ''"></app-content-card>
+<app-content-card class="simGameList" *ngFor="let game of (gamesList | defaultType : 'Simulator'); 
+index as i; first as isFirst" 
+[game]="game"
+[ngClass] = "game.title.toLowerCase() === selectedSearchGame.toLowerCase() ? 'selectedGame' : ''"></app-content-card>
+<app-content-card class="adventureGameList" *ngFor="let game of (gamesList | defaultType : 'Adventure');
+ index as i; first as isFirst" 
+ [game]="game" [class.is-first]="isFirst"
+ [ngClass] = "game.title.toLowerCase() === selectedSearchGame.toLowerCase() ? 'selectedGame' : ''"></app-content-card>
+<app-content-card class="sandboxGameList" *ngFor="let game of (gamesList | defaultType : 'Sandbox'); 
+index as i; first as isFirst"
+ [game]="game" [class.is-first]="isFirst"
+ [ngClass] = "game.title.toLowerCase() === selectedSearchGame.toLowerCase() ? 'selectedGame' : ''"></app-content-card>
+<app-content-card class="openGameList" *ngFor="let game of (gamesList | defaultType : 'Open-World'); 
+index as i; first as isFirst" 
+[game]="game" [class.is-first]="isFirst"
+[ngClass] = "game.title.toLowerCase() === selectedSearchGame.toLowerCase() ? 'selectedGame' : ''"></app-content-card>
+<app-content-card class="strategyGameList" *ngFor="let game of (gamesList | defaultType : 'Turn-Based Strategy');
+ index as i; first as isFirst"
+  [game]="game" [class.is-first]="isFirst"
+  [ngClass] = "game.title.toLowerCase() === selectedSearchGame.toLowerCase() ? 'selectedGame' : ''"></app-content-card>

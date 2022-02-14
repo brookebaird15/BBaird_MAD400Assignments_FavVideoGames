@@ -1,12 +1,30 @@
 :host{
-    display: block;
+    overflow: hidden;
+    display: flex;
     border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5%;
+    margin-bottom: 2%;
+
+}
+img{
+    width: 100%;
+    border-radius: 5%;
+}
+.content-card-img{
+    margin: 2%;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-img {
-    width: 200px;
-}
+// :host.is-first{
+//     border: 2px solid red;
+// }
 
-:host.is-first{
-    border: 2px solid red;
-}
+

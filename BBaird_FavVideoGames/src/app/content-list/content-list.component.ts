@@ -7,6 +7,11 @@ import { Content } from '../helper-files/content-interface'
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
+  public searchGame = "";
+  public buttonClick = false;
+  public isFound = false;
+  public selectedSearchGame = "";
+  
 
   public gamesList: Content[] = [
     { id: 0, 
@@ -21,14 +26,14 @@ export class ContentListComponent implements OnInit {
       description: 'A farming simulator that is also a dating/visual novel simulator',
       creator: 'Concerned Ape',
       imgURL: 'https://assets.nintendo.com/image/upload/c_pad,f_auto,h_613,q_auto,w_1089/ncom/en_US/games/switch/s/stardew-valley-switch/hero?v=2021120220 ',
-      type: 'Farming Simulator',
+      type: 'Simulator',
       tags: ["Simulation", "Survival"]},
     {  id: 2,
       title: 'Cities: Skylines',
       description: 'A city-building simulator that focuses on urban-planning, public transport and planning roads',
       creator: 'Colossal Order',
       imgURL: 'https://image.api.playstation.com/cdn/UP4139/CUSA06548_00/dMHT9bxaA6OCQ1e9lu0xP2uIU9dxZSFt.png',
-      type: 'City-Building Simulator',
+      type: 'Simulator',
       tags: ["Simulation", "City-Builder"]
     },
     {  id: 3,
@@ -36,7 +41,7 @@ export class ContentListComponent implements OnInit {
       description: 'A social-simulator game where one can experience life, build a home and become rich',
       creator: 'Maxis',
       imgURL: 'https://upload.wikimedia.org/wikipedia/hr/thumb/3/3a/The_Sims_4_Cover_Art_2.png/220px-The_Sims_4_Cover_Art_2.png',
-      type: 'Social Simulator',
+      type: 'Simulator',
       tags: ["Simulation", "Casual"]
     },
     {  id: 4,
@@ -57,7 +62,7 @@ export class ContentListComponent implements OnInit {
     },
     {id: 6,
       title: 'Slime Rancher',
-      description: 'You wrangle slimes and going adventuring',
+      description: 'You wrangle slimes and go adventuring',
       creator: 'Monomi Park',
       imgURL: 'https://image.api.playstation.com/vulcan/img/cfn/11307NUlRPcxCgzizu6gpFZiR_WIqYHV9W0G8obBn0J1qCXY-SjbkzKihVNA3WzUQHbD08zWVaN-a7U5--t57lc-gckkQ0f-.png',
       type: 'Adventure',
@@ -73,6 +78,12 @@ export class ContentListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  searchForTitle(){
+    this.isFound = this.gamesList.findIndex((game: Content) => game.title.toLowerCase() === this.searchGame.toLowerCase()) > -1 ? true: false;
+    this.buttonClick = true;
+    this.selectedSearchGame = this.searchGame;
   }
 
 }

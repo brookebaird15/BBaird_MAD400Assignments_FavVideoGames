@@ -1,0 +1,25 @@
+.simGameList{
+    background-color: cadetblue;
+}
+.adventureGameList{
+    background-color: darksalmon;
+}
+.sandboxGameList{
+    background-color:burlywood;
+}
+.openGameList{
+    background-color:lavender;
+}
+.strategyGameList{
+    background-color: rosybrown;
+}
+.isFound {
+    color: green;
+}
+.isNotFound {
+    color:red;
+}
+.selectedGame{
+    border-width: 5px;
+    border: solid green;
+}
