@@ -8,5 +8,5 @@
 </a></div>
 <div *ngIf = "game ? game.type : null" class="type"> {{ game ? game.type : ''}}</div>
 <ul class = "tags">
-     <li *ngFor=" let game of game?.tags">{{game}}</li>
+     <li appHoverAffect *ngFor=" let game of game?.tags">{{game}}</li>
 </ul>
