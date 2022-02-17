@@ -3,7 +3,8 @@
 <div class = "creator"> {{ game ? game.creator : ''}} </div>
 <div class="content-card-img">
     <a (click)="log()" clickable>
-    <img *ngIf="game?.imgURL" src="{{ game?.imgURL }}">
+    <img *ngIf = "!game?.imgURL" src="https://img.itch.zone/aW1nLzM5OTIzMzcucG5n/original/iILOLC.png" />
+    <img *ngIf="game?.imgURL" src="{{ game?.imgURL }}" />
 </a></div>
 <div *ngIf = "game ? game.type : null" class="type"> {{ game ? game.type : ''}}</div>
 <ul class = "tags">

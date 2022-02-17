@@ -40,7 +40,7 @@ export class ContentListComponent implements OnInit {
       title: 'The Sims 4',
       description: 'A social-simulator game where one can experience life, build a home and become rich',
       creator: 'Maxis',
-      imgURL: 'https://upload.wikimedia.org/wikipedia/hr/thumb/3/3a/The_Sims_4_Cover_Art_2.png/220px-The_Sims_4_Cover_Art_2.png',
+      imgURL: '',
       type: 'Simulator',
       tags: ["Simulation", "Casual"]
     },
@@ -56,7 +56,7 @@ export class ContentListComponent implements OnInit {
       title: 'Civilization V',
       description: 'A turn-based strategy game where players can play as a different civilization or nation',
       creator: 'Firaxis Games',
-      imgURL: 'https://cdn.cloudflare.steamstatic.com/steam/apps/8930/header.jpg?t=1579731804',
+      imgURL: '',
       type: 'Turn-Based Strategy',
       tags: ["Strategy", "Turn-Based"]
     },
