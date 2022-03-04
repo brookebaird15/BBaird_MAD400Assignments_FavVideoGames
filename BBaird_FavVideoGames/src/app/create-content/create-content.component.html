@@ -1,0 +1,23 @@
+<form>
+    <div>
+    ID: <input #id type="number" [(ngModel)]="temp" id="id">
+</div>
+<div>
+    Title: <input #title [(ngModel)]="temp" title="title">
+</div>
+<div>
+    Description: <input #description [(ngModel)]="temp" description="description">
+</div>
+<div>
+    Creator: <input #creator [(ngModel)]="temp" creator="creator">
+</div>
+<div>
+    Image URL: <input #imageUrl>
+</div>
+<div>
+    Tags: <input #tags>
+</div>
+<div>
+    <button type="submit" (click)="addVideoGame(id.value, title.value, description.value, creator.value, imageUrl.value, tags.value)">Add Game</button>
+</div>
+</form>
