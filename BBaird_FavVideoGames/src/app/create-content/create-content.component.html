@@ -1,23 +1,27 @@
-<form>
+<form #form>
     <div>
-    ID: <input #id type="number" [(ngModel)]="newGame.id" name="id">
+    ID: <input type="number"  #id>
 </div>
 <div>
-    Title: <input #title [(ngModel)]="newGame.title"name="title">
+    Title: <input type="text" #title>
 </div>
 <div>
-    Description: <input #description [(ngModel)]="newGame.description" name="description">
+    Description: <input type="text" #description>
 </div>
 <div>
-    Creator: <input #creator [(ngModel)]="newGame.creator" name="creator">
+    Creator: <input type="text" #creator>
 </div>
 <div>
-    Image URL: <input #imageUrl>
+    Image URL: <input type="text" #imageUrl>
 </div>
 <div>
-    Tags: <input #tags>
+    Type: <input type="text" #type>
 </div>
 <div>
-    <button type="submit" (click)="addVideoGame(id.value, title.value, description.value, creator.value, imageUrl.value, tags.value)">Add Game</button>
+    Tags: <input type="text" #tags>
 </div>
+<div>
+    <button type="submit" (click)="addVideoGame(id.value, title.value, description.value, creator.value, imageUrl.value, type.value, tags.value); form.reset()">Add Game</button>
+</div>
+<p *ngIf="failMessage" class="errorMsg">{{ failMessage }} </p>
 </form>

@@ -7,7 +7,7 @@ import {Content} from './helper-files/content-interface';
 export class DefaultTypePipe implements PipeTransform {
 
   transform(game: Content[], dType?: string): Content[] {
-    return game.filter(item => item.type === dType)
+    return game.filter(item => item.type?.toUpperCase() === dType?.toUpperCase())
   }
 
 }

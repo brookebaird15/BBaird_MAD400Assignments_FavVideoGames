@@ -90,6 +90,7 @@ export class ContentListComponent implements OnInit {
     this.gamesList.push(newVideoGame);
 
     this.gamesList = [...this.gamesList];
+    console.log(this.gamesList)
   }
 
 }
