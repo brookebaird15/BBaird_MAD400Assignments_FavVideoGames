@@ -1,15 +1,15 @@
 <form>
     <div>
-    ID: <input #id type="number" [(ngModel)]="temp" id="id">
+    ID: <input #id type="number" [(ngModel)]="newGame.id" name="id">
 </div>
 <div>
-    Title: <input #title [(ngModel)]="temp" title="title">
+    Title: <input #title [(ngModel)]="newGame.title"name="title">
 </div>
 <div>
-    Description: <input #description [(ngModel)]="temp" description="description">
+    Description: <input #description [(ngModel)]="newGame.description" name="description">
 </div>
 <div>
-    Creator: <input #creator [(ngModel)]="temp" creator="creator">
+    Creator: <input #creator [(ngModel)]="newGame.creator" name="creator">
 </div>
 <div>
     Image URL: <input #imageUrl>

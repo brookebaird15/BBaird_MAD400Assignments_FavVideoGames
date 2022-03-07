@@ -4,6 +4,8 @@
 </div>
 <div class = "isFound" *ngIf="isFound">Found the game</div>
 <div class = "isNotFound" *ngIf="!isFound && buttonClick">Title doesn't exist</div>
+<app-create-content (newVideoGameEvent)="addVideoGameToGameList($event)"></app-create-content>
+
 
 <app-content-card class = "default" *ngFor="let game of (gamesList | defaultType); index as i; first as isFirst"
  [game]="game" [class.is-first]="isFirst"

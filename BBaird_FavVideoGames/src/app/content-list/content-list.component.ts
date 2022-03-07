@@ -85,5 +85,11 @@ export class ContentListComponent implements OnInit {
     this.buttonClick = true;
     this.selectedSearchGame = this.searchGame;
   }
+  //add game to the array
+  public addVideoGameToGameList(newVideoGame: Content): void {
+    this.gamesList.push(newVideoGame);
+
+    this.gamesList = [...this.gamesList];
+  }
 
 }
