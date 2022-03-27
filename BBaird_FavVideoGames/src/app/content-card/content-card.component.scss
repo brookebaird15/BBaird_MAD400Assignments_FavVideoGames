@@ -23,8 +23,11 @@ img{
     max-height: 100%;
 }
 
-// :host.is-first{
-//     border: 2px solid red;
-// }
+:host.is-first{
+    border: 2px solid red;
+}
 
 
+:host.top-card {
+    box-shadow: 5px 5px purple;
+}
