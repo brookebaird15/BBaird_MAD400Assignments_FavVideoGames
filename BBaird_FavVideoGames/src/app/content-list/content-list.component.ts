@@ -18,12 +18,25 @@ export class ContentListComponent implements OnInit {
     this.contentList = [];
   }
   ngOnInit(): void {
-    this.gameService.getContentObs().subscribe(contentArray => {
-      this.contentList = contentArray
-      
+    this.getContentFromServer();
+  }
+
+  getContentFromServer(): void{
+    this.gameService.getContent().subscribe(contentArray => {this.contentList = contentArray});
+  }
+
+  addContentToList(newContent: Content){
+    this.gameService.addContent(newContent).subscribe(newContentFromServer => {
+      this.contentList.push(newContentFromServer)
+      this.contentList = [...this.contentList]
+
     })
   }
 
+  updateContentInList(contentItem: Content): void{
+    this.gameService.updateContent(contentItem).subscribe(() =>
+    this.getContentFromServer)
+  }
   searchForTitle(){
     this.isFound = this.contentList.findIndex((game: Content) => game.title.toLowerCase() === this.searchGame.toLowerCase()) > -1 ? true: false;
     this.buttonClick = true;
