@@ -1,0 +1,27 @@
+<div>
+    <form #form>
+        <div> ID: <input type="text" disabled> </div>
+        <div>
+            Title: <input type="text" #title>
+        </div>
+        <div>
+            Description: <input type="text" #description>
+        </div>
+        <div>
+            Creator: <input type="text" #creator>
+        </div>
+        <div>
+            Type: <input type="text" #type>
+        </div>
+        <div>
+            Tags (comma seperated list): <input type="text" #tags>
+        </div>
+        <div>
+            Image URL: <input type="text" #imgURL>
+        </div>
+<mat-dialog-actions>
+    <button mat-button (click)="addGame(title.value, description.value, creator.value, 
+    imgURL.value, type.value, tags.value)">Add Game</button>
+    <button mat-button mat-dialog-close>Back</button>
+  </mat-dialog-actions>
+  </form>

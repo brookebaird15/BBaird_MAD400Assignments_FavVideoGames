@@ -1,4 +1,11 @@
-<header class="title"> {{game ? game.title : '' }}</header>
+<mat-card>
+<mat-card-header class="title"> 
+    <mat-card-title>
+    {{game ? game.title : '' }}
+</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
 <div class ="description"> {{ game ? game.description : ''}}</div>
 <div class = "creator"> {{ game ? game.creator : ''}} </div>
 <div class="content-card-img">
@@ -10,3 +17,5 @@
 <ul class = "tags">
      <li appHoverAffect *ngFor=" let game of game?.tags">{{game}}</li>
 </ul>
+</mat-card-content>
+</mat-card>

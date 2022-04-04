@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Content } from '../helper-files/content-interface';
+import { MakeDialogueComponent } from '../make-dialogue/make-dialogue.component';
 import { GameService } from '../services/game.service';
 
 @Component({
@@ -12,38 +14,24 @@ export class ModifyContentComponent implements OnInit {
   newContent?: Content;
 
 
-  constructor(private gameService: GameService) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
     
-  addGame(title: string, description: string, creator: string, imgURL?: string, type?: string, tags?: string): void{
-    if (type == ''){
-      type = undefined
+  addGame(): void{
+    let dialogueRef = this.dialog.open(MakeDialogueComponent, {
+      height: '500px',
+      width: '400px'
+    })
+
+    dialogueRef.afterClosed().subscribe(resultsPassed =>  {
+      if (resultsPassed){
+      this.newGameEvent.emit(resultsPassed)
     }
-    let tagsArray = tags?.split(", ")
-    if(tagsArray){
-      for(let i = 0; i < tagsArray.length; i++){
-        if(tagsArray[i] == ""){
-          tagsArray.splice(i, 1)
-        }
-      }
-    }
-    this.newContent = {
-      title: title,
-      description: description,
-      creator: creator,
-      imgURL: imgURL,
-      type: type?.toLowerCase(),
-      tags: tagsArray
-    }
-    if(title == "" || description == "" || creator ==""){
-      this.newContent = undefined
-      console.log("Could not add the item")
-    }
-    if(this.newContent){
-      this.newGameEvent.emit(this.newContent)
-    }
+  }
+    )
+  
   }
 
 }

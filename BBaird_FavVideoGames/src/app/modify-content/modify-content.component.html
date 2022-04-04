@@ -1,28 +1,5 @@
-<div>
-    <form #form>
-        <div>
-            Title: <input type="text" #title>
-        </div>
-        <div>
-            Description: <input type="text" #description>
-        </div>
-        <div>
-            Creator: <input type="text" #creator>
-        </div>
-        <div>
-            Type: <input type="text" #type>
-        </div>
-        <div>
-            Tags (comma seperated list): <input type="text" #tags>
-        </div>
-        <div>
-            Image URL: <input type="text" #imgURL>
-        </div>
         <div>
             <div id="button">
-                <button type="button" (click)="addGame(title.value, description.value, creator.value, 
-                imgURL.value, type.value, tags.value)">Add Game</button>
+                <button type="button" (click)="addGame()">Create Game</button>
                 </div>
-                </div>
-                </form>
-                </div>
+</div>

@@ -1,8 +1,10 @@
 <app-modify-content (newGameEvent)="addContentToList($event)" ></app-modify-content>
 
 <div class = "searchBar">
-    <input [(ngModel)]="searchGame">
-    <button (click)="searchForTitle()">Search</button>
+    <mat-form-field>
+    <input matInput [(ngModel)]="searchGame">
+</mat-form-field>
+    <button mat-raised-button color="primary" (click)="searchForTitle()">Search</button>
 </div>
 <div class = "isFound" *ngIf="isFound">Found the game</div>
 <div class = "isNotFound" *ngIf="!isFound && buttonClick">Title doesn't exist</div>
