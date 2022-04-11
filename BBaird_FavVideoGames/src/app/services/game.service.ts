@@ -21,9 +21,10 @@ export class GameService {
   }
 
   getGame(id: number): Observable<Content>{
-    this.messageService.removeLast()
-    this.messageService.add(`Content item added at ID: ${id}`)
-    return of(CONTENT[id])
+    // this.messageService.removeLast()
+    // this.messageService.add(`Content item added at ID: ${id}`)
+    // return of(CONTENT[id])
+    return this.http.get<Content>("api/content/" + id);
   }
   checkIndex(id: number): boolean{
     if(CONTENT[id]){

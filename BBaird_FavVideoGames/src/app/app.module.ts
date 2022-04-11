@@ -19,6 +19,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MakeDialogueComponent } from './make-dialogue/make-dialogue.component';
 import { MatCardModule } from '@angular/material/card';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { MatCardModule } from '@angular/material/card';
     HoverAffectDirective,
     MessagesComponent,
     ModifyContentComponent,
-    MakeDialogueComponent
+    MakeDialogueComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent
   ],
   entryComponents: [MakeDialogueComponent],
   imports: [
@@ -44,7 +48,8 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatDialogModule,
     MatCardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
     
   ],
   providers: [],

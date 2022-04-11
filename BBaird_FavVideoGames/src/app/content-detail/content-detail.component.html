@@ -1,0 +1,20 @@
+<mat-card>
+    <a [routerLink]="['/list']" routerLinkActive="active">Back to game list</a>
+    <mat-card-header class="title"> 
+        <mat-card-title>
+        {{game ? game.title : '' }}
+    </mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+    <div class = "creator"> {{ game ? game.creator : ''}} </div>
+    <div class="content-card-img">
+        <img *ngIf = "!game?.imgURL" src="https://img.itch.zone/aW1nLzM5OTIzMzcucG5n/original/iILOLC.png" />
+        <img *ngIf="game?.imgURL" src="{{ game?.imgURL }}" />
+    </div>
+    <div *ngIf = "game ? game.type : null" class="type"> {{ game ? game.type : ''}}</div>
+    <ul class = "tags">
+         <li appHoverAffect *ngFor=" let game of game?.tags">{{game}}</li>
+    </ul>
+    </mat-card-content>
+    </mat-card>
